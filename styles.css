@@ -34,10 +34,11 @@ body{
     }
   }
 
-h1{
+h1,h6{
     color: white;
     display: flex;
     justify-content: center;
-    margin-top: 400px;
-    font-size: 60px;
+    position: relative;
+    font-size: 50px;
+    top:100px
 }
