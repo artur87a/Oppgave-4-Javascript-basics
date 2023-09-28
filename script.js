@@ -1,4 +1,7 @@
 /*
+*****************************************************
+***************Oppgave nr 1**************************
+******************************************************
 1.Write a function that takes in a number as a parameter and returns
 "Odd" if the number received is an odd number and "Even" if the number
 received is even. Use arrow function syntax.
@@ -22,7 +25,9 @@ console.log((isOdd(5)))
 console.log((isOdd(6)))
 
 /*
-2.
+*****************************************************
+***************Oppgave nr 2**************************
+******************************************************
 
 Make a variable called userTitle and set the content equal to "Mr." if userMale is true,
 or to "Mrs." if userMale is false. Use the TERNARY conditional to do this:
@@ -32,63 +37,16 @@ const variable = statement ? "this if true" : "this if not true"
 Try changing userMale to both true and false and console.log your new variable,
 to see that your conditional is working.
 */
-
-// let userTitle(userMale) = "Mr"
-// let userMale;
-// if (userMale === "Mr"){
-//     console.log("It is Mr !!!")
-// } else if (userMale === "Mrs"){
-//     console.log("It is not Mr it is Mrs")
-// }
-
-// console.log(userTitle)
-
-// function userTitle(userMale) {
-//   let userMale =("Mr") ? "Mr" : "Mrs";
-// }
-// if (userMale = "Mr"){
-// console.log("it is Mr")
-// }  else {
-//  (userMale = "Mrs")
-// console.log("it is not Mr it is Mrs")
-// }
-
-
-
-// userTitle("Mrs")
 const userMale = true
 
 const userTitle = userMale ? "Mr." : "Mrs.";
 
 console.log(userTitle);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let userTitle = "Mr"
-// let userMale;
-// if (userMale === "Mr"){
-//     console.log("It is Mr !!!")
-// } else if (userMale === "Mrs"){
-//     console.log("It is not Mr it is Mrs")
-// }
-
-// console.log(userTitle)
-
-
-
 /*
-3.
+*****************************************************
+***************Oppgave nr 3**************************
+******************************************************
 
 Write a function that takes in 2 parameters:
 
@@ -124,10 +82,14 @@ function greetBasedOnHour(name, hour) {
 
 console.log(greetBasedOnHour("Piotr", 11));
 console.log(greetBasedOnHour("Kate", 22));
-console.log(greetBasedOnHour("Per", 6));
+console.log(greetBasedOnHour("Per", 12));
 console.log(greetBasedOnHour("Anton", 2));
+console.log(greetBasedOnHour("Isak", 26));
 
-/*4.
+/*
+*****************************************************
+***************Oppgave nr 4**************************
+******************************************************
 
 Write a function that takes in 2 numbers as parameters.
 
@@ -136,21 +98,70 @@ then return the sum of the largest number divided by the smaller.
 
 Use arrow function syntax.
 
-Example: your function receives 13 and 24, it should return the sum of 24/13
-
+Example: your function receives 13 and 24, it should return the of 24/13
+ sum
 */
 
-const twoNumbers =(num1, num2) => {
 
-  const largest = num1 > num2 ? num1 : num2;
-  const smallest = num1 > num2 ? num1 : num2;
+const calculateRatio = (num1, num2) => {
+  if (num1 > num2) {
+    return num1 / num2;
+  } else {
+    return num2 / num1;
+  }
+};
 
-const result = largest/smallest
-return result;
+// Example usage:
+const number1 = 24;
+const number2 = 13;
+const result = calculateRatio(number1, number2);
+console.log(result);
 
+/*
+*****************************************************
+***************Oppgave nr 5**************************
+******************************************************
+
+Write an IF/ELSE conditional statement that checks whether username is empty,
+that the user age is 18+, and that userIsBlocked is false.
+
+(HINT: Use the && (logical AND) to check several things in one IF statement)
+
+If all of these conditions are true, change the userIsLoggedIn variable to true and
+and the goToPage variable to "/home" then console.log a welcome message.
+
+If any of the conditions for logging in are not met, console.log an error message.
+
+Try changing the values of the variables to make sure your IF/ELSE conditional
+can handle all cases correctly
+*/
+
+let username = "ja"; 
+let userAge = 28; 
+let userIsBlocked = false;
+
+let userIsLoggedIn = false;
+let goToPage = "";
+
+if (username !== "" && userAge >= 18 && !userIsBlocked) {
+  userIsLoggedIn = true;
+  goToPage = "/home";
+  console.log("Welcome! You are now logged in.");
+} else {
+  console.log("Error: Unable to log in. Please check your credentials or contact support.");
 }
-const num1= 13;
-const num2= 24;
 
-const divisionAvTwoNumbers =  twoNumbers(num1, num2)
-console.log(divisionAvTwoNumbers)
+function createStars() {
+  const starsContainer = document.querySelector('.stars');
+  
+  for (let i = 0; i < 50; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.animationDelay = `${Math.random() * 5}s`;
+    starsContainer.appendChild(star);
+  }
+}
+
+createStars();
